@@ -1,0 +1,13 @@
+<%= form_tag root_path, :method => 'POST' do %>
+    <div class="form-group">
+        <%= text_field_tag 'id', nil, placeholder: 'Enter Company Ticker Symbol', size: 50, class: 'form-control' %>
+        <%= submit_tag 'Look up stock quote', class: 'btn btn-primary' %> 
+    </div>
+<% end %>
+<% if @error %>
+    <%= @error %>
+<% elsif @stock %>
+    <%= @stock %>
+<% elsif @nothing %>
+    <%= @nothing %>
+<% end %>
