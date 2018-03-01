@@ -5,11 +5,9 @@ class HomeController < ApplicationController
     elsif
       if params[:id]
         begin
-          @stock = StockQuote::Stock.quote(params[:id]).name
-          puts 'at begin', @stock
+          @stock = StockQuote::Stock.quote(params[:id])
         rescue 
           @error = 'The stock symbol not exist, please try again.'
-          puts 'rescue', @error
         end
       end
     end

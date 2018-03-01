@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap', '~> 4.0.0'
 gem 'stock_quote', '~> 1.5', '>= 1.5.4'
+gem 'devise', '~> 4.4', '>= 4.4.1'
 
 
 group :development, :test do
