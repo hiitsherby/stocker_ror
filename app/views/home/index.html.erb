@@ -8,7 +8,9 @@
 <!--error not working-->
     <%= @error %>
 <% elsif @stock %>
-    <strong>Company Name: </strong><%= @stock.name %> - <%= @stock.symbol %><br/>
+<div class="card">
+  <div class="card-header"><strong>Company Name: </strong><%= @stock.name %> - <%= @stock.symbol %><br/></div>
+  <div class="card-body">        
     <strong>Current Ask: </strong><%= @stock.l %><br/>
     <strong>Earnings Per Share: </strong><%= @stock.eps %><br/>
     <strong>Price/Earning Ratio: </strong><%= @stock.pe %><br/>
@@ -16,7 +18,9 @@
     <strong>Stock Open: </strong><%= @stock.op %><br/>
     <strong>Day's Range: </strong><%= @stock.lo %> - <%= @stock.hi %><br/>
     <strong>Year High: </strong><%= @stock.hi52 %><br/>
-    <strong>Year Low: </strong><%= @stock.lo52 %><br/>
+    <strong>Year Low: </strong><%= @stock.lo52 %><br/></div> 
+  <div class="card-footer">Footer</div>
+</div>
 
 <% elsif @nothing %>
     <%= @nothing %>

@@ -1,8 +1,10 @@
-<nav class="navbar navbar-expand-md navbar-light bg-faded">
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Navbar</a>
+  <%= link_to "Stock App", root_path, class: 'navbar-brand' %>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="nav navbar-nav navbar-toggler-right">
       <li class="nav-item">
@@ -35,5 +37,6 @@
         </li>        
       <% end %>
     </ul>
+  </div>
   </div>
 </nav>

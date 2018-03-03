@@ -4,11 +4,33 @@
   <strong>Ticker:</strong>
   <%= @stock.ticker %>
 </p>
+ <% unless @stock.nil? %>
+    <% @stock = StockQuote::Stock.quote(@stock.ticker) %>
+      <div class="card">
+        <div class="card-header"><strong><%= @stock.name %> - <%= @stock.symbol %></strong></div>
+        <div class="card-body row"> 
+          <div class="col-md-4">
+          <h1><%= @stock.l %><h1/>
+            <p><strong>Earnings Per Share: </strong><%= @stock.eps %></p>
+            <p><strong>Price/Earning Ratio: </strong><%= @stock.pe %></p>
+            <p><strong>Market Cap: </strong><%= @stock.mc %></p>
+            <p><strong>Stock Open: </strong><%= @stock.op %></p>
+            <p><strong>Day's Range: </strong><%= @stock.lo %> - <%= @stock.hi %></p>
+            <p><strong>Year High: </strong><%= @stock.hi52 %></p>
+            <p><strong>Year Low: </strong><%= @stock.lo52 %></p> 
+          </div>
+          <div class="col-md-8">
+            <p><%= @stock.summary[0]['overview']%></p>
+          </div>
+        </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @stock.user_id %>
-</p>
+  <% else %>
+      <strong>Ticker not exist.</strong><%= 'Error' %>
+  <% end %>
+        <div class="card-footer">
+          <%= link_to 'Edit', edit_stock_path(@stock), class: 'btn btn-info' %> 
+          <%= link_to 'Delete', stock_path(@stock), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-info' %>
+          <%= link_to 'Back', stocks_path, class: 'btn btn-info' %>
+      </div>
+  </div>
 
-<%= link_to 'Edit', edit_stock_path(@stock) %> |
-<%= link_to 'Back', stocks_path %>
